@@ -1,30 +1,85 @@
 // app/tutorials/page.tsx
-import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
+'use client';
+
+import { useState, useEffect } from 'react';
+import TutorialNavigation from '@/components/tutorial_navigation';
+import MarkdownRenderer from '@/components/markdown_renderer';
+
+type TutorialItem = {
+    name: string;
+    description: string;
+    keywords: string[];
+    content: string;
+};
+
+type TutorialCategory = {
+    name: string;
+    icon: string;
+    items: TutorialItem[];
+};
 
 export default function Tutorials() {
+    const [categories, setCategories] = useState<TutorialCategory[]>([]);
+    const [selectedCategory, setSelectedCategory] = useState(0);
+    const [selectedTutorial, setSelectedTutorial] = useState(0);
+    const [error, setError] = useState<string | null>(null);
+
+    useEffect(() => {
+        async function loadTutorials() {
+            try {
+                const response = await fetch('/api/tutorials');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch tutorials');
+                }
+                const data = await response.json();
+                console.log('Fetched data:', data); // 添加日志
+                if (data.length === 0) {
+                    setError('No tutorials found');
+                } else {
+                    setCategories(data);
+                }
+            } catch (error) {
+                console.error('Error loading tutorials:', error);
+                setError('Failed to load tutorials');
+            }
+        }
+
+        loadTutorials();
+    }, []);
+
+    const handleSelectTutorial = (categoryIndex: number, tutorialIndex: number) => {
+        setSelectedCategory(categoryIndex);
+        setSelectedTutorial(tutorialIndex);
+    };
+
+    const currentTutorial = categories[selectedCategory]?.items[selectedTutorial];
+
     return (
-        <div className="container mx-auto py-12">
-            <h1 className="text-3xl font-bold mb-8">ZK Tutorials</h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <Card>
-                    <CardHeader>
-                        <CardTitle>ZKP Basics</CardTitle>
-                        <CardDescription>Learn the fundamentals of Zero-Knowledge Proofs</CardDescription>
-                    </CardHeader>
-                </Card>
-                <Card>
-                    <CardHeader>
-                        <CardTitle>Implementing ZKP</CardTitle>
-                        <CardDescription>Step-by-step guide to implementing ZKP</CardDescription>
-                    </CardHeader>
-                </Card>
-                <Card>
-                    <CardHeader>
-                        <CardTitle>ZKP in Blockchain</CardTitle>
-                        <CardDescription>Explore how ZKP is used in blockchain technology</CardDescription>
-                    </CardHeader>
-                </Card>
-            </div>
+        <div className="flex h-screen">
+            <TutorialNavigation
+                categories={categories}
+                onSelectTutorial={handleSelectTutorial}
+            />
+            <main className="flex-1 p-6 overflow-y-auto">
+                {error ? (
+                    <p className="text-red-500">{error}</p>
+                ) : currentTutorial ? (
+                    <>
+                        <h1 className="text-3xl font-bold mb-4">{currentTutorial.name}</h1>
+                        <p className="text-gray-600 mb-2">{currentTutorial.description}</p>
+                        <div className="flex flex-wrap gap-2 mb-4">
+                            {currentTutorial.keywords.map((keyword, index) => (
+                                <span key={index} className="bg-gray-200 px-2 py-1 rounded-full text-sm">
+                                    {keyword}
+                                </span>
+                            ))}
+                        </div>
+                        <MarkdownRenderer content={currentTutorial.content} />
+                    </>
+                ) : (
+                    <p>Loading tutorials...</p>
+                )}
+            </main>
         </div>
-    )
+    );
 }
