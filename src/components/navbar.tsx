@@ -1,6 +1,7 @@
 // components/Navbar.tsx
 import Link from 'next/link'
 import { Button } from "@/components/ui/button"
+import ThemeToggle from './theme_toggle'
 
 const Navbar = () => {
     return (
@@ -26,6 +27,7 @@ const Navbar = () => {
                         </Button>
                     </li>
                 </ul>
+                <ThemeToggle />
             </div>
         </nav>
     )
