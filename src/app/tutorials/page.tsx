@@ -69,7 +69,7 @@ export default function Tutorials() {
                         <p className="text-gray-600 mb-2">{currentTutorial.description}</p>
                         <div className="flex flex-wrap gap-2 mb-4">
                             {currentTutorial.keywords.map((keyword, index) => (
-                                <span key={index} className="bg-gray-200 px-2 py-1 rounded-full text-sm">
+                                <span key={index} className="bg-gray-700 text-white px-2 py-1 rounded-full text-sm">
                                     {keyword}
                                 </span>
                             ))}
