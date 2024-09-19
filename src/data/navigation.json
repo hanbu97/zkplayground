@@ -34,12 +34,155 @@
               "icon": "Briefcase",
               "description": "零知识证明在现实世界中的应用",
               "keywords": ["应用", "用例", "实践"]
+            },
+            {
+              "name": "什么是零知识证明",
+              "link": "https://example.com/zkp-intro",
+              "icon": "File",
+              "description": "零知识证明的基本概念和定义",
+              "keywords": ["基础", "定义", "历史"]
+            },
+            {
+              "name": "零知识证明的应用场景",
+              "link": "https://example.com/zkp-applications",
+              "icon": "Briefcase",
+              "description": "零知识证明在现实世界中的应用",
+              "keywords": ["应用", "用例", "实践"]
+            },
+            {
+              "name": "什么是零知识证明",
+              "link": "https://example.com/zkp-intro",
+              "icon": "File",
+              "description": "零知识证明的基本概念和定义",
+              "keywords": ["基础", "定义", "历史"]
+            },
+            {
+              "name": "零知识证明的应用场景",
+              "link": "https://baidu.com/zkp-applications",
+              "icon": "Briefcase",
+              "description": "零知识证明在现实世界中的应用",
+              "keywords": ["应用", "用例", "实践"]
+            },
+            {
+              "name": "什么是零知识证明",
+              "link": "https://example.com/zkp-intro",
+              "icon": "File",
+              "description": "零知识证明的基本概念和定义",
+              "keywords": ["基础", "定义", "历史"]
+            },
+            {
+              "name": "零知识证明的应用场景",
+              "link": "https://example.com/zkp-applications",
+              "icon": "Briefcase",
+              "description": "零知识证明在现实世界中的应用",
+              "keywords": ["应用", "用例", "实践"]
+            },
+            {
+              "name": "什么是零知识证明",
+              "link": "https://example.com/zkp-intro",
+              "icon": "File",
+              "description": "零知识证明的基本概念和定义",
+              "keywords": ["基础", "定义", "历史"]
+            },
+            {
+              "name": "零知识证明的应用场景",
+              "link": "https://baidu.com/zkp-applications",
+              "icon": "Briefcase",
+              "description": "零知识证明在现实世界中的应用",
+              "keywords": ["应用", "用例", "实践"]
             }
           ]
         },
         {
-          "name": "数学基础",
+          "name": "数学基础1",
           "items": [
+            {
+              "name": "密码学基础",
+              "link": "https://example.com/cryptography-basics",
+              "icon": "Lock",
+              "description": "理解零知识证明所需的密码学知识",
+              "keywords": ["密码学", "加密", "哈希"]
+            },
+            {
+              "name": "密码学基础",
+              "link": "https://example.com/cryptography-basics",
+              "icon": "Lock",
+              "description": "理解零知识证明所需的密码学知识",
+              "keywords": ["密码学", "加密", "哈希"]
+            },
+            {
+              "name": "密码学基础",
+              "link": "https://example.com/cryptography-basics",
+              "icon": "Lock",
+              "description": "理解零知识证明所需的密码学知识",
+              "keywords": ["密码学", "加密", "哈希"]
+            },
+            {
+              "name": "密码学基础",
+              "link": "https://example.com/cryptography-basics",
+              "icon": "Lock",
+              "description": "理解零知识证明所需的密码学知识",
+              "keywords": ["密码学", "加密", "哈希"]
+            }
+          ]
+        },
+        {
+          "name": "数学基础2",
+          "items": [
+            {
+              "name": "密码学基础",
+              "link": "https://example.com/cryptography-basics",
+              "icon": "Lock",
+              "description": "理解零知识证明所需的密码学知识",
+              "keywords": ["密码学", "加密", "哈希"]
+            },
+            {
+              "name": "密码学基础",
+              "link": "https://example.com/cryptography-basics",
+              "icon": "Lock",
+              "description": "理解零知识证明所需的密码学知识",
+              "keywords": ["密码学", "加密", "哈希"]
+            },
+            {
+              "name": "密码学基础",
+              "link": "https://example.com/cryptography-basics",
+              "icon": "Lock",
+              "description": "理解零知识证明所需的密码学知识",
+              "keywords": ["密码学", "加密", "哈希"]
+            },
+            {
+              "name": "密码学基础",
+              "link": "https://example.com/cryptography-basics",
+              "icon": "Lock",
+              "description": "理解零知识证明所需的密码学知识",
+              "keywords": ["密码学", "加密", "哈希"]
+            }
+          ]
+        },
+        {
+          "name": "数学基础3",
+          "items": [
+            {
+              "name": "密码学基础",
+              "link": "https://example.com/cryptography-basics",
+              "icon": "Lock",
+              "description": "理解零知识证明所需的密码学知识",
+              "keywords": ["密码学", "加密", "哈希"]
+            },
+            {
+              "name": "密码学基础",
+              "link": "https://example.com/cryptography-basics",
+              "icon": "Lock",
+              "description": "理解零知识证明所需的密码学知识",
+              "keywords": ["密码学", "加密", "哈希"]
+            },
+            {
+              "name": "密码学基础",
+              "link": "https://example.com/cryptography-basics",
+              "icon": "Lock",
+              "description": "理解零知识证明所需的密码学知识",
+              "keywords": ["密码学", "加密", "哈希"]
+            },
             {
               "name": "密码学基础",
               "link": "https://example.com/cryptography-basics",
