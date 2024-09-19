@@ -32,6 +32,8 @@ const IconComponent: React.FC<{ name: string }> = ({ name }) => {
 
 const ResourceNavigation: React.FC<ResourceNavigationProps> = ({ categories, onSelectSubcategory }) => {
     const [expandedCategories, setExpandedCategories] = useState<Set<number>>(new Set([0]));
+    const [selectedCategory, setSelectedCategory] = useState(0);
+    const [selectedSubcategory, setSelectedSubcategory] = useState(0);
 
     const toggleCategory = (categoryIndex: number) => {
         setExpandedCategories(prev => {
@@ -40,10 +42,21 @@ const ResourceNavigation: React.FC<ResourceNavigationProps> = ({ categories, onS
                 newSet.delete(categoryIndex);
             } else {
                 newSet.add(categoryIndex);
+                // Only select first subcategory if this category wasn't previously expanded
+                if (!prev.has(categoryIndex)) {
+                    setSelectedCategory(categoryIndex);
+                    setSelectedSubcategory(0);
+                    onSelectSubcategory(categoryIndex, 0);
+                }
             }
             return newSet;
         });
-        onSelectSubcategory(categoryIndex, 0); // Select the first subcategory when expanding
+    };
+
+    const handleSubcategoryClick = (categoryIndex: number, subcategoryIndex: number) => {
+        setSelectedCategory(categoryIndex);
+        setSelectedSubcategory(subcategoryIndex);
+        onSelectSubcategory(categoryIndex, subcategoryIndex);
     };
 
     return (
@@ -63,8 +76,11 @@ const ResourceNavigation: React.FC<ResourceNavigationProps> = ({ categories, onS
                                 {category.subcategories.map((subcategory, subcategoryIndex) => (
                                     <button
                                         key={subcategoryIndex}
-                                        onClick={() => onSelectSubcategory(categoryIndex, subcategoryIndex)}
-                                        className="block w-full text-left px-4 py-2 hover:bg-secondary transition-colors rounded-md text-sm"
+                                        onClick={() => handleSubcategoryClick(categoryIndex, subcategoryIndex)}
+                                        className={`block w-full text-left px-4 py-2 hover:bg-secondary transition-colors rounded-md text-sm ${selectedCategory === categoryIndex && selectedSubcategory === subcategoryIndex
+                                            ? 'bg-secondary'
+                                            : ''
+                                            }`}
                                     >
                                         {subcategory.name}
                                     </button>
