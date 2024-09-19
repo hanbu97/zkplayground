@@ -6,18 +6,31 @@
       "subcategories": [
         {
           "name": "概念介绍",
-          "icon": "HelpCircle",
           "items": [
             {
               "name": "什么是零知识证明",
-              "link": "/basics/concepts/what-is-zkp",
+              "link": "https://example.com/zkp-intro",
               "icon": "File",
               "description": "零知识证明的基本概念和定义",
               "keywords": ["基础", "定义", "历史"]
             },
             {
               "name": "零知识证明的应用场景",
-              "link": "/basics/concepts/zkp-applications",
+              "link": "https://example.com/zkp-applications",
+              "icon": "Briefcase",
+              "description": "零知识证明在现实世界中的应用",
+              "keywords": ["应用", "用例", "实践"]
+            },
+            {
+              "name": "什么是零知识证明",
+              "link": "https://example.com/zkp-intro",
+              "icon": "File",
+              "description": "零知识证明的基本概念和定义",
+              "keywords": ["基础", "定义", "历史"]
+            },
+            {
+              "name": "零知识证明的应用场景",
+              "link": "https://baidu.com/zkp-applications",
               "icon": "Briefcase",
               "description": "零知识证明在现实世界中的应用",
               "keywords": ["应用", "用例", "实践"]
@@ -26,11 +39,10 @@
         },
         {
           "name": "数学基础",
-          "icon": "Calculator",
           "items": [
             {
               "name": "密码学基础",
-              "link": "/basics/math/cryptography",
+              "link": "https://example.com/cryptography-basics",
               "icon": "Lock",
               "description": "理解零知识证明所需的密码学知识",
               "keywords": ["密码学", "加密", "哈希"]
@@ -45,18 +57,17 @@
       "subcategories": [
         {
           "name": "zk-SNARKs",
-          "icon": "Zap",
           "items": [
             {
               "name": "Groth16",
-              "link": "/protocols/zk-snarks/groth16",
+              "link": "https://example.com/groth16",
               "icon": "Code",
               "description": "广泛使用的 zk-SNARK 协议",
               "keywords": ["SNARK", "效率", "广泛应用"]
             },
             {
               "name": "PlonK",
-              "link": "/protocols/zk-snarks/plonk",
+              "link": "https://example.com/plonk",
               "icon": "Cpu",
               "description": "通用且高效的零知识证明系统",
               "keywords": ["通用性", "高效", "新兴"]
@@ -65,12 +76,11 @@
         },
         {
           "name": "zk-STARKs",
-          "icon": "Star",
           "items": [
             {
               "name": "STARKs 介绍",
-              "link": "/protocols/zk-starks/intro",
-              "icon": "FileText",
+              "link": "https://example.com/starks-intro",
+              "icon": "Star",
               "description": "可扩展、透明的零知识证明系统",
               "keywords": ["STARK", "可扩展性", "透明"]
             }

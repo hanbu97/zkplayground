@@ -1,10 +1,5 @@
-
 // components/ResourceNavigation.tsx
-import React from 'react';
-import Link from 'next/link';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import React, { useState } from 'react';
 import * as Icons from 'lucide-react';
 
 type NavigationItem = {
@@ -17,7 +12,6 @@ type NavigationItem = {
 
 type Subcategory = {
     name: string;
-    icon: string;
     items: NavigationItem[];
 };
 
@@ -29,6 +23,7 @@ type Category = {
 
 type ResourceNavigationProps = {
     categories: Category[];
+    onSelectSubcategory: (categoryIndex: number, subcategoryIndex: number) => void;
 };
 
 const IconComponent: React.FC<{ name: string }> = ({ name }) => {
@@ -36,62 +31,75 @@ const IconComponent: React.FC<{ name: string }> = ({ name }) => {
     return Icon ? <Icon className="h-5 w-5" /> : <Icons.HelpCircle className="h-5 w-5" />;
 };
 
+// const ResourceNavigation: React.FC<ResourceNavigationProps> = ({ categories, onSelectSubcategory }) => {
+//     const [expandedCategory, setExpandedCategory] = useState<number | null>(0);
 
+//     return (
+//         <nav className="w-64 h-screen overflow-y-auto border-r">
+//             {categories.map((category, categoryIndex) => (
+//                 <div key={categoryIndex}>
+//                     <button
+//                         onClick={() => setExpandedCategory(expandedCategory === categoryIndex ? null : categoryIndex)}
+//                         className="flex items-center w-full text-left px-4 py-2 hover:bg-gray-100 transition-colors"
+//                     >
+//                         <IconComponent name={category.icon} />
+//                         <span className="ml-2 font-semibold">{category.name}</span>
+//                     </button>
+//                     {expandedCategory === categoryIndex && (
+//                         <div>
+//                             {category.subcategories.map((subcategory, subcategoryIndex) => (
+//                                 <button
+//                                     key={subcategoryIndex}
+//                                     onClick={() => onSelectSubcategory(categoryIndex, subcategoryIndex)}
+//                                     className="block w-full text-left px-6 py-2 hover:bg-gray-100 transition-colors"
+//                                 >
+//                                     {subcategory.name}
+//                                 </button>
+//                             ))}
+//                         </div>
+//                     )}
+//                 </div>
+//             ))}
+//         </nav>
+//     );
+// };
+const ResourceNavigation: React.FC<ResourceNavigationProps> = ({ categories, onSelectSubcategory }) => {
+    const [expandedCategory, setExpandedCategory] = useState<number | null>(0);
 
-const ResourceNavigation: React.FC<ResourceNavigationProps> = ({ categories }) => {
     return (
-        <Accordion type="single" collapsible className="w-full">
+        <nav className="w-64 h-screen overflow-y-auto border-r">
             {categories.map((category, categoryIndex) => (
-                <AccordionItem value={`category-${categoryIndex}`} key={categoryIndex}>
-                    <AccordionTrigger className="text-xl font-semibold">
-                        <div className="flex items-center gap-2">
-                            <IconComponent name={category.icon} />
-                            {category.name}
+                <div key={categoryIndex}>
+                    <button
+                        onClick={() => {
+                            setExpandedCategory(expandedCategory === categoryIndex ? null : categoryIndex);
+                            // onSelectSubcategory(categoryIndex); // 默认展示第一个子分类
+                            onSelectSubcategory(categoryIndex, 0); // 默认选择第一个子分类
+                        }}
+                        className="flex items-center w-full text-left px-4 py-2 hover:bg-gray-100 transition-colors"
+                    >
+                        <IconComponent name={category.icon} />
+                        <span className="ml-2 font-semibold">{category.name}</span>
+                    </button>
+                    {expandedCategory === categoryIndex && (
+                        <div>
+                            {category.subcategories.map((subcategory, subcategoryIndex) => (
+                                <button
+                                    key={subcategoryIndex}
+                                    onClick={() => onSelectSubcategory(categoryIndex, subcategoryIndex)}
+                                    className="block w-full text-left px-6 py-2 hover:bg-gray-100 transition-colors"
+                                >
+                                    {subcategory.name}
+                                </button>
+                            ))}
                         </div>
-                    </AccordionTrigger>
-                    <AccordionContent>
-                        {category.subcategories.map((subcategory, subcategoryIndex) => (
-                            <Accordion type="single" collapsible className="w-full ml-4" key={subcategoryIndex}>
-                                <AccordionItem value={`subcategory-${categoryIndex}-${subcategoryIndex}`}>
-                                    <AccordionTrigger className="text-lg font-medium">
-                                        <div className="flex items-center gap-2">
-                                            <IconComponent name={subcategory.icon} />
-                                            {subcategory.name}
-                                        </div>
-                                    </AccordionTrigger>
-                                    <AccordionContent>
-                                        <div className="grid gap-4 ml-4">
-                                            {subcategory.items.map((item, itemIndex) => (
-                                                <Card key={itemIndex}>
-                                                    <CardHeader>
-                                                        <div className="flex items-center gap-2">
-                                                            <IconComponent name={item.icon} />
-                                                            <CardTitle>{item.name}</CardTitle>
-                                                        </div>
-                                                        <CardDescription>{item.description}</CardDescription>
-                                                    </CardHeader>
-                                                    <CardContent>
-                                                        <div className="flex flex-wrap gap-2 mb-4">
-                                                            {item.keywords.map((keyword, kidx) => (
-                                                                <Badge key={kidx} variant="secondary">{keyword}</Badge>
-                                                            ))}
-                                                        </div>
-                                                        <Link href={item.link} className="text-blue-500 hover:underline">
-                                                            Learn more
-                                                        </Link>
-                                                    </CardContent>
-                                                </Card>
-                                            ))}
-                                        </div>
-                                    </AccordionContent>
-                                </AccordionItem>
-                            </Accordion>
-                        ))}
-                    </AccordionContent>
-                </AccordionItem>
+                    )}
+                </div>
             ))}
-        </Accordion>
+        </nav>
     );
 };
+
+
 
 export default ResourceNavigation;
