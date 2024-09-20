@@ -1,7 +1,98 @@
 {
   "categories": [
     {
-      "name": "零知识证明",
+      "name": "Math",
+      "icon": "Omega",
+      "subcategories": [
+        {
+          "name": "Arithmetization",
+          "items": [
+            {
+              "name": "From AIRs to RAPs",
+              "link": "https://hackmd.io/@aztec-network/plonk-arithmetiization-air",
+              "icon": "Newspaper",
+              "description": "how PLONK-style arithmetization works",
+              "keywords": ["arithmetization", "Math"]
+            }
+          ]
+        },
+        {
+          "name": "Coding Theory",
+          "items": [
+            {
+              "name": "Introduction to Algebraic Coding Theory",
+              "link": "https://www.bilibili.com/video/BV1W3411p7aN",
+              "icon": "Clapperboard",
+              "description": "代数编码理论导引。不仅讲了编码的数学那一部分（即不关心计算效率，比如各种bound，johnson bound等等），还讲了一些编码的算法层面（即关注多项式时间，里面包含一些对list decoding的介绍）",
+              "keywords": ["Coding Theory", "Math"]
+            },
+            {
+              "name": "Essential Coding Theory",
+              "link": "https://cse.buffalo.edu/faculty/atri/courses/coding-theory/book/web-coding-book.pdf",
+              "icon": "Book",
+              "description": "这本书是sudan大佬写的，在PCP上面做了很多贡献",
+              "keywords": ["Coding Theory", "Math"]
+            },
+            {
+              "name": "A Survey on Code-based Cryptography",
+              "link": "https://arxiv.org/pdf/2201.07119",
+              "icon": "Book",
+              "description": "",
+              "keywords": ["Coding Theory", "Math"]
+            },
+            {
+              "name": "Error-Correcting Codes",
+              "link": "https://cryptography101.ca/codes/",
+              "icon": "Video",
+              "description": "This course is an introduction to algebraic methods for devising error-correcting codes. ",
+              "keywords": ["Coding Theory", "Math"]
+            },
+            {
+              "name": "Error Correcting Codes",
+              "link": "https://www.youtube.com/watch?v=H7XFslRXJys&list=PLm3J0oaFux3ZYpFLwwrlv_EHH9wtH6pnX&index=40",
+              "icon": "Video",
+              "description": "The very basics of Error Correcting Codes taught at Carnegie Mellon University",
+              "keywords": ["Reed-Solomon"]
+            },
+            {
+              "name": "重新发明Reed-Solomon Code",
+              "link": "https://zhuanlan.zhihu.com/p/418331215",
+              "icon": "Worm",
+              "description": "",
+              "keywords": ["Reed-Solomon"]
+            },
+            {
+              "name": "Reed-Solomon Error Correcting Codes from the Bottom Up",
+              "link": "https://tomverbeure.github.io/2022/08/07/Reed-Solomon.html",
+              "icon": "Book",
+              "description": "",
+              "keywords": ["Reed-Solomon"]
+            }
+          ]
+        },
+        {
+          "name": "FFT",
+          "items": [
+            {
+              "name": "Algebraic FFTs",
+              "link": "https://rje.li/24-07-03-alg-fft.html",
+              "icon": "SquareSigma",
+              "description": "Number Theoretic Transform",
+              "keywords": ["NTT"]
+            },
+            {
+              "name": "ntt 201 book",
+              "link": "https://github.com/ingonyama-zk/papers/blob/main/ntt_201_book.pdf",
+              "icon": "Book",
+              "description": "Foundations of NTT Hardware Design",
+              "keywords": ["NTT"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "General",
       "icon": "GitBranch",
       "subcategories": [
         {
@@ -13,25 +104,18 @@
               "icon": "Code",
               "description": "零知识证明入门教程。Comprehensive Zero-Knowledge Proofs Tutorial",
               "keywords": ["zk", "密码学"]
-            },
-            {
-              "name": "STARKs 介绍",
-              "link": "https://github.com/z2o-k7e/z2o-k7e.github.io",
-              "icon": "Star",
-              "description": "a community-driven project dedicated to collaborative ZKP (Zero-Knowledge Proof) studies and creation.",
-              "keywords": ["STARK", "可扩展性", "透明"]
             }
           ]
         },
         {
-          "name": "STARK",
+          "name": "视频",
           "items": [
             {
-              "name": "STARKs 介绍",
-              "link": "a community-driven project dedicated to collaborative ZKP (Zero-Knowledge Proof) studies and creation.",
-              "icon": "Star",
-              "description": "可扩展、透明的零知识证明系统",
-              "keywords": ["STARK", "可扩展性", "透明"]
+              "name": "ZKP MOOC",
+              "link": "https://zk-learning.org/",
+              "icon": "Video",
+              "description": "By Berkeley RDI Center on Decentralization & AI. 内容很广, 各种 SNARK 的概览，FRI 流程，FRI 安全分析，FS 安全分析",
+              "keywords": ["zk", "密码学", "FRI"]
             }
           ]
         }
@@ -42,7 +126,7 @@
       "icon": "GitBranch",
       "subcategories": [
         {
-          "name": "Arithmetization ",
+          "name": "Arithmetization",
           "items": [
             {
               "name": "Arithmetization I",
@@ -61,6 +145,39 @@
           ]
         },
         {
+          "name": "FRi",
+          "items": [
+            {
+              "name": "一张图讲解FRI",
+              "link": "https://x.com/EllipticHector/status/1641842245337743367",
+              "icon": "Image",
+              "description": "how to use FRI for a batch of functions",
+              "keywords": ["FRI", "理论"]
+            },
+            {
+              "name": "FRI邻近性测试",
+              "link": "https://mp.weixin.qq.com/s/DHcAej5T_mZDRS5G_5hy3g",
+              "icon": "Newspaper",
+              "description": "该测试可以使不受信任的证明者说服验证者，一个承诺的向量是接近于一个Reed-Solomon码字的，且通信量仅为编码维度的多项式对数。这可以很容易地用于仅从密码学哈希函数（更确切地说，随机预言）来构建实际高效的 zkSNARK，且无需可信设置。",
+              "keywords": ["FRI", "理论"]
+            },
+            {
+              "name": "STARK Low Degree Testing——FRI「转载」",
+              "link": "https://mp.weixin.qq.com/s/9d3tOgw1Sxdd-o-Qzw5hzQ",
+              "icon": "Newspaper",
+              "description": "",
+              "keywords": ["FRI", "LDT"]
+            },
+            {
+              "name": "Diving DEEP FRI in the STARK world",
+              "link": "https://blog.lambdaclass.com/diving-deep-fri/",
+              "icon": "Newspaper",
+              "description": "learning your daily moon math with a concrete example",
+              "keywords": ["FRI", "Example"]
+            }
+          ]
+        },
+        {
           "name": "教程 ",
           "items": [
             {
@@ -69,6 +186,96 @@
               "icon": "Code",
               "description": "STARK 101 is a hands-on tutorial on how to write a STARK prover from scratch (in Python).",
               "keywords": ["Stark", "Coding"]
+            },
+            {
+              "name": "stark-anatomy",
+              "link": "https://github.com/aszepieniec/stark-anatomy",
+              "icon": "Code",
+              "description": "STARK tutorial with supporting code in python",
+              "keywords": ["Stark", "Coding"]
+            }
+          ]
+        },
+        {
+          "name": "笔记 ",
+          "items": [
+            {
+              "name": "Kyrin笔记",
+              "link": "https://github.com/KyrinCode/ZKP",
+              "icon": "NotebookTabs",
+              "description": "把几个经典的commitment和proving system推了一遍",
+              "keywords": ["笔记", "stark"]
+            }
+          ]
+        },
+        {
+          "name": "项目实现",
+          "items": [
+            {
+              "name": "lambda class版zk-stark",
+              "link": "https://lambdaclass.github.io/lambdaworks/starks/starks.html",
+              "icon": "Code",
+              "description": "cairo-vm使用的版本，文档+代码",
+              "keywords": ["Stark", "Project"]
+            },
+            {
+              "name": "ethstark",
+              "link": "https://eprint.iacr.org/2021/582.pdf",
+              "icon": "NotebookTabs",
+              "description": "Describing the computational integrity statement proved by that code and the specific STARK construction used to prove the statement.",
+              "keywords": ["Stark", "starkware"]
+            },
+            {
+              "name": "Stark101 Verifer",
+              "link": "https://github.com/readygo67/stark101",
+              "icon": "Code",
+              "description": "Describing the computational integrity statement proved by that code and the specific STARK construction used to prove the statement.",
+              "keywords": ["Stark101", "Project", "Demo"]
+            }
+          ]
+        },
+        {
+          "name": "Soundness ",
+          "items": [
+            {
+              "name": "Security level of a STARK ",
+              "link": "https://github.com/GuildOfWeavers/genSTARK/issues/3",
+              "icon": "Users",
+              "description": "",
+              "keywords": ["Stark", "Discussion"]
+            }
+          ]
+        },
+        {
+          "name": "Papers ",
+          "items": [
+            {
+              "name": "Transparent Polynomial Commitment Scheme with Polylogarithmic Communication Complexity",
+              "link": "https://eprint.iacr.org/2019/1020",
+              "icon": "Scroll",
+              "description": "",
+              "keywords": ["Stark", "Paper", "Polynomial Commitment"]
+            },
+            {
+              "name": "DEEP-FRI: Sampling Outside the Box Improves Soundness",
+              "link": "https://eprint.iacr.org/2019/336",
+              "icon": "Scroll",
+              "description": "",
+              "keywords": ["Stark", "Paper", "Polynomial Commitment"]
+            },
+            {
+              "name": "Worst-case to average case reductions for the distance to a code",
+              "link": "https://www.math.toronto.edu/swastik/fri.pdf",
+              "icon": "Scroll",
+              "description": "",
+              "keywords": ["Stark", "Paper", "Polynomial Commitment"]
+            },
+            {
+              "name": "Mersenne31 polynomial arithmetic",
+              "link": "https://github.com/ingonyama-zk/papers/blob/main/Mersenne31_polynomial_arithmetic.pdf",
+              "icon": "Scroll",
+              "description": "还有其他论文",
+              "keywords": ["Stark", "Paper", "Arithmetization"]
             }
           ]
         }
@@ -119,97 +326,6 @@
       ]
     },
     {
-      "name": "FRI",
-      "icon": "BookOpen",
-      "subcategories": [
-        {
-          "name": "概念介绍",
-          "items": [
-            {
-              "name": "一张图讲解FRI",
-              "link": "https://x.com/EllipticHector/status/1641842245337743367",
-              "icon": "Image",
-              "description": "how to use FRI for a batch of functions",
-              "keywords": ["新手", "理论"]
-            }
-          ]
-        },
-        {
-          "name": "数学",
-          "items": [
-            {
-              "name": "Algebraic FFTs",
-              "link": "https://rje.li/24-07-03-alg-fft.html",
-              "icon": "SquareSigma",
-              "description": "Number Theoretic Transform",
-              "keywords": ["NTT"]
-            },
-            {
-              "name": "ntt 201 book",
-              "link": "https://github.com/ingonyama-zk/papers/blob/main/ntt_201_book.pdf",
-              "icon": "Book",
-              "description": "Foundations of NTT Hardware Design",
-              "keywords": ["NTT"]
-            },
-            {
-              "name": "Error Correcting Codes",
-              "link": "https://www.youtube.com/watch?v=H7XFslRXJys&list=PLm3J0oaFux3ZYpFLwwrlv_EHH9wtH6pnX&index=40",
-              "icon": "Video",
-              "description": "The very basics of Error Correcting Codes taught at Carnegie Mellon University",
-              "keywords": ["Reed-Solomon"]
-            },
-            {
-              "name": "重新发明Reed-Solomon Code",
-              "link": "https://zhuanlan.zhihu.com/p/418331215",
-              "icon": "Worm",
-              "description": "",
-              "keywords": ["Reed-Solomon"]
-            },
-            {
-              "name": "Reed-Solomon Error Correcting Codes from the Bottom Up",
-              "link": "https://tomverbeure.github.io/2022/08/07/Reed-Solomon.html",
-              "icon": "Book",
-              "description": "",
-              "keywords": ["Reed-Solomon"]
-            }
-          ]
-        },
-        {
-          "name": "课程",
-          "items": [
-            {
-              "name": "密码学基础",
-              "link": "https://example.com/cryptography-basics",
-              "icon": "Lock",
-              "description": "理解零知识证明所需的密码学知识",
-              "keywords": ["密码学", "加密", "哈希"]
-            },
-            {
-              "name": "密码学基础",
-              "link": "https://example.com/cryptography-basics",
-              "icon": "Lock",
-              "description": "理解零知识证明所需的密码学知识",
-              "keywords": ["密码学", "加密", "哈希"]
-            },
-            {
-              "name": "密码学基础",
-              "link": "https://example.com/cryptography-basics",
-              "icon": "Lock",
-              "description": "理解零知识证明所需的密码学知识",
-              "keywords": ["密码学", "加密", "哈希"]
-            },
-            {
-              "name": "密码学基础",
-              "link": "https://example.com/cryptography-basics",
-              "icon": "Lock",
-              "description": "理解零知识证明所需的密码学知识",
-              "keywords": ["密码学", "加密", "哈希"]
-            }
-          ]
-        }
-      ]
-    },
-    {
       "name": "ZKVM",
       "icon": "Monitor",
       "subcategories": [
@@ -222,50 +338,18 @@
               "icon": "MonitorPause",
               "description": "zkEVM prover in C++",
               "keywords": ["stark", "snark", "Polygon"]
-            },
-            {
-              "name": "PlonK",
-              "link": "https://example.com/plonk",
-              "icon": "Cpu",
-              "description": "通用且高效的零知识证明系统",
-              "keywords": ["通用性", "高效", "新兴"]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Demo",
-      "icon": "FolderKanban",
-      "subcategories": [
-        {
-          "name": "Stark",
-          "items": [
-            {
-              "name": "STARK 101",
-              "link": "https://github.com/starkware-industries/stark101",
-              "icon": "Notebook",
-              "description": "A tutorial for a basic STARK protocol to prove the calculation of a Fibonacci-Square sequence.",
-              "keywords": ["Stark"]
-            },
-            {
-              "name": "Kyrin笔记",
-              "link": "https://github.com/KyrinCode/ZKP",
-              "icon": "NotebookTabs",
-              "description": "把几个经典的commitment和proving system推了一遍",
-              "keywords": ["通用性", "高效", "新兴"]
             }
           ]
         },
         {
-          "name": "zk-STARKs",
+          "name": "Videos",
           "items": [
             {
-              "name": "STARKs 介绍",
-              "link": "https://example.com/starks-intro",
-              "icon": "Star",
-              "description": "可扩展、透明的零知识证明系统",
-              "keywords": ["STARK", "可扩展性", "透明"]
+              "name": "Designing a zkVM: A Case Study of Cairo",
+              "link": "https://www.bilibili.com/video/BV1zVpweHEQu/",
+              "icon": "Video",
+              "description": "设计 zkVM：以 Cairo 为例",
+              "keywords": ["stark", "Cairo"]
             }
           ]
         }
